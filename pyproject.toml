@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meeting-mojiokoshi"
+version = "0.2.0"
+description = "Desktop meeting recorder and CPU Whisper transcription app"
+readme = "README.md"
+license = "LicenseRef-MeetingMojiokoshi-Source-Available-1.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "faster-whisper>=1.1,<2",
+    "hf-xet>=1.4,<2",
+    "numpy>=1.26,<3",
+    "Pillow>=12.2,<13",
+    "platformdirs>=4.2,<5",
+    "pystray>=0.19",
+    "soundcard>=0.4.3,<0.5",
+]
+
+[project.optional-dependencies]
+build = [
+    "pyinstaller>=6.8,<7",
+]
+test = [
+    "pytest>=9.0.3,<10",
+]
+dev = [
+    "bandit>=1.8,<2",
+    "detect-secrets>=1.5,<2",
+    "pip-audit>=2.9,<3",
+    "pytest>=9.0.3,<10",
+    "uv>=0.11,<0.12",
+]
+
+[project.scripts]
+meeting-mojiokoshi = "meeting_mojiokoshi.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.bandit]
+exclude_dirs = [".venv", "build", "dist", "release", "tests"]

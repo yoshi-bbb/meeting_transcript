@@ -1,0 +1,36 @@
+Meeting Mojiokoshi Source-Available License 1.0
+
+Copyright (c) Meeting Mojiokoshi contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+1. Commercial use is permitted only if the resulting product or service
+   includes a clear, reasonably prominent, user-visible notice stating that it
+   uses "Meeting Mojiokoshi" (or wording of equivalent clarity) and includes a
+   link to the public project repository where technically feasible.
+
+2. Redistributions of source code must retain the above copyright notice, this
+   list of conditions, and the following disclaimer.
+
+3. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions, and the following disclaimer in the documentation
+   and/or other materials provided with the distribution, and must include the
+   attribution notice described in condition 1 when the distributed product or
+   service is offered commercially.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+This is a custom source-available license. It is not OSI-approved and may not
+satisfy strict definitions of Open Source or OSS because of the mandatory
+in-product attribution condition for commercial use.

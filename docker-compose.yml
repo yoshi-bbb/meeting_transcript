@@ -1,0 +1,11 @@
+services:
+  builder:
+    build: .
+    image: meeting-mojiokoshi:latest
+    working_dir: /app
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    environment:
+      HOME: /tmp
+    volumes:
+      - .:/app
+    command: python scripts/build_desktop.py

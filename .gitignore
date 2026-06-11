@@ -1,0 +1,34 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+build/
+dist/
+release/
+*.spec.bak
+recordings/
+*.log
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+*.crt
+*.cer
+
+# Generated meeting output (keep docs/fixtures explicit)
+meeting_*.wav
+meeting_*.txt
+.*.track-*.wav
+
+# Audit and scanner output
+pip-audit-report.json
+bandit-report.json

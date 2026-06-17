@@ -3,8 +3,10 @@
 このドキュメントでは、Linux で配布された Meeting Mojiokoshi 実行ファイル（バイナリ）を実行する方法を説明します。
 
 ## 入手方法
-- GitHub Releases から最新の `MeetingMojiokoshi-*-linux-*.tar.gz` をダウンロード。
-- またはソースから自分でビルドした `dist/MeetingMojiokoshi` を使用。
+現在、GitHub Releases では一般利用者向けのビルド済み tar.gz を提供していません。
+
+- ソースから自分でビルドした `dist/MeetingMojiokoshi` を使用してください。
+- ビルド手順は `docs/build-linux.md` を参照してください。
 
 ## 実行手順（基本）
 

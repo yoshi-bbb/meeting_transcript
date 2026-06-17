@@ -3,8 +3,10 @@
 このドキュメントでは、Windows でビルド済みの Meeting Mojiokoshi 実行ファイル（.exe）を実行する方法を説明します。
 
 ## 入手方法
-- GitHub Releases から最新の `MeetingMojiokoshi-*-windows-x86_64.zip` をダウンロード
-- またはソースから自分でビルドした `dist/MeetingMojiokoshi.exe` を使用
+現在、GitHub Releases では一般利用者向けのビルド済み ZIP を提供していません。
+
+- ソースから自分でビルドした `dist/MeetingMojiokoshi.exe` を使用してください。
+- ビルド手順は `docs/build-windows.md` を参照してください。
 
 ## 実行手順
 

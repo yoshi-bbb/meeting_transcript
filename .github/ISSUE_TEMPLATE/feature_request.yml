@@ -1,0 +1,30 @@
+name: Feature request
+description: Suggest a focused improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior you want.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional, but useful for tradeoffs.
+  - type: textarea
+    id: impact
+    attributes:
+      label: Privacy, consent, or distribution impact
+      description: Note any effect on recording consent, local data handling, or binary redistribution.

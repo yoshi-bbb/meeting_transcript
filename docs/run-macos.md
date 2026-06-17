@@ -3,8 +3,10 @@
 このドキュメントでは、macOS でビルド済みの Meeting Mojiokoshi アプリ（.app バンドル）を実行する方法を説明します。
 
 ## 入手方法
-- GitHub Releases から最新の `MeetingMojiokoshi-*-macos-*.zip` をダウンロード（Apple Silicon または Intel 版を選択）。
-- またはソースから自分でビルドした `dist/MeetingMojiokoshi.app` を使用。
+現在、GitHub Releases では一般利用者向けのビルド済み ZIP を提供していません。
+
+- ソースから自分でビルドした `dist/MeetingMojiokoshi.app` を使用してください。
+- ビルド手順は `docs/build-macos.md` を参照してください。
 
 ## 実行手順
 

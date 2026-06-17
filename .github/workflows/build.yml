@@ -21,8 +21,6 @@ jobs:
             smoke: --full
           - runner: windows-latest
             smoke: --full
-          - runner: macos-15-intel
-            smoke: ""
           - runner: macos-15
             smoke: ""
     runs-on: ${{ matrix.runner }}

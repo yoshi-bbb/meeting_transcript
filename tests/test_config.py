@@ -55,4 +55,4 @@ def test_load_settings_does_not_follow_symlink(tmp_path: Path, monkeypatch) -> N
 
     loaded = config.load_settings(Path("/fallback"))
 
-    assert loaded.output_dir == "/fallback"
+    assert loaded.output_dir == str(Path("/fallback"))

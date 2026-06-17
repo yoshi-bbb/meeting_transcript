@@ -5,10 +5,12 @@
 **重要**: PyInstaller は OS ネイティブの実行ファイルを作成するため、macOS 版は必ず macOS 環境でビルドしてください。
 
 ## 前提条件
-- macOS 11 以降（Intel または Apple Silicon）
+- macOS 11 以降（Apple Silicon）
 - Python 3.12（python.org の公式インストーラー推奨。tkinter を含む）
 - Xcode Command Line Tools（`xcode-select --install`）
 - Git
+
+現在の固定依存セットでは macOS Intel を public CI の対象外にしています。Python 3.12 / macOS x86_64 では `onnxruntime` の配布 wheel がなく、`faster-whisper` の依存解決が失敗するためです。Intel Mac 向けに配布する場合は、互換性のある依存バージョンを別途検証してください。
 
 ## 手順
 
@@ -59,8 +61,8 @@
 
 ## 注意事項
 - 初回ビルド時はセキュリティ警告が出る場合があります（右クリック → 開く）。
-- Apple Silicon（arm64）と Intel（x86_64）は別々にビルドする必要があります（GitHub Actions で並列ビルド）。
-- GitHub Actions では第三者ライセンス確認が完了するまでバイナリアーティファクトはアップロードしません。
+- GitHub Actions は Apple Silicon（arm64）の macOS ビルドのみ検証します。
+- 公開リポジトリではソースコードのみを公開し、GitHub Actions はバイナリアーティファクトをアップロードしません。手動ビルドは主にローカル検証用です。
 - **System Tray（タスクトレイ / メニューバー）対応**: pystray + Pillow を依存に追加し、PyInstaller でバンドルしています。ウィンドウを閉じるとメニューバートレイに最小化され、クリックメニューから録音制御が可能です。
 - 配布時は Apple Developer ID での署名・公証（notarization）を推奨します（現在の CI では未実施）。
 

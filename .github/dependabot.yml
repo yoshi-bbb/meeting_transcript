@@ -12,6 +12,10 @@ updates:
     ignore:
       - dependency-name: "pytest"
         versions: ["<9.0.3"]
+      # huggingface-hub 1.19.x requires typer <0.26; Dependabot updates this
+      # constraints file line-by-line and can otherwise create invalid pins.
+      - dependency-name: "typer"
+        versions: [">=0.26.0"]
 
   - package-ecosystem: github-actions
     directory: "/"
@@ -24,3 +28,7 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 2
+    ignore:
+      # The project currently supports Python >=3.10,<3.13.
+      - dependency-name: "python"
+        versions: [">=3.13"]

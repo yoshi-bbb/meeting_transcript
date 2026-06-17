@@ -6,7 +6,7 @@ altgraph==0.17.5
     #   pyinstaller
 annotated-doc==0.0.4
     # via typer
-anyio==4.13.0
+anyio==4.14.0
     # via httpx
 av==17.1.0
     # via faster-whisper
@@ -37,7 +37,7 @@ colorama==0.4.6 ; sys_platform == 'win32'
     #   tqdm
 ctranslate2==4.8.0
     # via faster-whisper
-cyclonedx-python-lib==11.9.0
+cyclonedx-python-lib==11.10.0
     # via pip-audit
 defusedxml==0.7.1
     # via py-serializable
@@ -45,13 +45,13 @@ detect-secrets==1.5.0
     # via meeting-mojiokoshi (pyproject.toml)
 faster-whisper==1.2.1
     # via meeting-mojiokoshi (pyproject.toml)
-filelock==3.29.3
+filelock==3.29.4
     # via
     #   cachecontrol
     #   huggingface-hub
 flatbuffers==25.12.19
     # via onnxruntime
-fsspec==2026.4.0
+fsspec==2026.6.0
     # via huggingface-hub
 h11==0.16.0
     # via httpcore
@@ -63,7 +63,7 @@ httpcore==1.0.9
     # via httpx
 httpx==0.28.1
     # via huggingface-hub
-huggingface-hub==1.18.0
+huggingface-hub==1.19.0
     # via
     #   faster-whisper
     #   tokenizers
@@ -82,7 +82,7 @@ markdown-it-py==4.2.0
     # via rich
 mdurl==0.1.2
     # via markdown-it-py
-msgpack==1.1.2
+msgpack==1.2.0
     # via cachecontrol
 numpy==2.4.6
     # via
@@ -123,7 +123,7 @@ platformdirs==4.10.0
     #   pip-audit
 pluggy==1.6.0
     # via pytest
-protobuf==7.35.0
+protobuf==7.35.1
     # via onnxruntime
 py-serializable==2.1.0
     # via cyclonedx-python-lib
@@ -133,7 +133,7 @@ pygments==2.20.0
     # via
     #   pytest
     #   rich
-pyinstaller==6.20.0
+pyinstaller==6.21.0
     # via meeting-mojiokoshi (pyproject.toml)
 pyinstaller-hooks-contrib==2026.6
     # via pyinstaller
@@ -149,7 +149,7 @@ pyparsing==3.3.2
     # via pip-requirements-parser
 pystray==0.19.5
     # via meeting-mojiokoshi (pyproject.toml)
-pytest==9.0.3
+pytest==9.1.0
     # via meeting-mojiokoshi (pyproject.toml)
 python-xlib==0.33 ; sys_platform == 'linux'
     # via pystray
@@ -206,5 +206,5 @@ typing-extensions==4.15.0
     #   huggingface-hub
 urllib3==2.7.0
     # via requests
-uv==0.11.20
+uv==0.11.21
     # via meeting-mojiokoshi (pyproject.toml)

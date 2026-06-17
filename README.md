@@ -117,15 +117,19 @@ python scripts/smoke_desktop.py
 python scripts/package_release.py
 ```
 
-`release/` にOS・CPUアーキテクチャ入りの ZIP または `tar.gz`、SHA-256 ファイル、`LICENSE` が生成されます。
+`release/` にOS・CPUアーキテクチャ入りの ZIP または `tar.gz`、SHA-256 ファイル、`LICENSE`、`THIRD_PARTY_NOTICES.md` が生成されます。
+
+### 第三者ライセンス
+
+配布アーカイブには `THIRD_PARTY_NOTICES.md` を同梱します。PyInstaller で作成した実行ファイルは Python パッケージだけでなく、各 wheel に含まれるネイティブ共有ライブラリも同梱します。特に PyAV の upstream wheel は FFmpeg と x264/x265 を含む場合があるため、公開バイナリを配布する前に第三者ライセンス義務を確認するか、GPL コンポーネントを含まない依存構成で再ビルドしてください。
 
 ### 配布物の整合性
 
-各リリースアーカイブには `.sha256` チェックサムが付きます。SHA-256 はファイル破損の検出には有効ですが、配布者の身元を証明するものではありません。組織外へ配布する場合は、コード署名（Windows/macOS）や GPG などの署名付きリリース手順を別途整備してください。現在の自動ビルド成果物は署名されていません。
+各リリースアーカイブには `.sha256` チェックサムが付きます。SHA-256 はファイル破損の検出には有効ですが、配布者の身元を証明するものではありません。組織外へ配布する場合は、コード署名（Windows/macOS）や GPG などの署名付きリリース手順を別途整備してください。現在の手動配布物は署名されていません。
 
-PyInstaller はクロスコンパイラではありません。Windows版はWindows runner、macOS版はmacOS runner、Linux版は固定Docker環境で生成します。GitHub Actions の [build.yml](.github/workflows/build.yml) は Linux x86-64、Windows x86-64、macOS Intel、macOS Apple Silicon の4環境をビルドします。Linux/Windows は成果物上で `tiny` モデルによるCPU文字起こしまで、macOS は署名なし app bundle の基本自己診断までCIで確認します。macOS でも手元では `python scripts/smoke_desktop.py --full` でCPU文字起こしまで確認できます。
+PyInstaller はクロスコンパイラではありません。Windows版はWindows runner、macOS版はmacOS runner、Linux版は固定Docker環境で生成します。GitHub Actions の [build.yml](.github/workflows/build.yml) は Linux x86-64、Windows x86-64、macOS Intel、macOS Apple Silicon の4環境をビルドします。Linux/Windows は成果物上で `tiny` モデルによるCPU文字起こしまで、macOS は署名なし app bundle の基本自己診断までCIで確認します。macOS でも手元では `python scripts/smoke_desktop.py --full` でCPU文字起こしまで確認できます。公開リポジトリ上の CI は、第三者ライセンス確認が完了するまでバイナリアーティファクトをアップロードしません。
 
-現在の自動ビルド成果物はコード署名・Apple notarization を行いません。SHA-256 だけでは改ざん防止や配布者認証には不十分です。組織外へ配布する場合は、Windows コード署名証明書と Apple Developer ID を用いた署名工程を追加してください。
+現在の手動配布物はコード署名・Apple notarization を行いません。SHA-256 だけでは改ざん防止や配布者認証には不十分です。組織外へ配布する場合は、Windows コード署名証明書と Apple Developer ID を用いた署名工程を追加してください。
 
 ## Docker
 

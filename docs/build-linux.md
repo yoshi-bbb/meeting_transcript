@@ -19,8 +19,8 @@
 
 2. リポジトリをクローン
    ```bash
-   git clone https://github.com/OWNER/REPOSITORY.git
-   cd REPOSITORY
+   git clone https://github.com/yoshi-bbb/meeting_transcript.git
+   cd meeting_transcript
    ```
 
 3. 仮想環境を作成・有効化
@@ -56,7 +56,7 @@
    python scripts/package_release.py
    ```
 
-   `release/` に `MeetingMojiokoshi-0.2.0-linux-x86_64.tar.gz`（または arm64）と SHA256 ファイルが生成されます。パッケージには実行バイナリ、README.md、`.desktop` ファイルが含まれます。
+   `release/` に `MeetingMojiokoshi-0.2.0-linux-x86_64.tar.gz`（または arm64）と SHA256 ファイルが生成されます。パッケージには実行バイナリ、README.md、LICENSE、THIRD_PARTY_NOTICES.md、`.desktop` ファイルが含まれます。
 
 ## Docker を使用した再現性ビルド（推奨）
 プロジェクトでは Linux バイナリの再現性を確保するため、Docker によるビルドを推奨しています。生成物は Debian 13 (trixie) 相当の glibc 環境向けです。
@@ -80,12 +80,12 @@ docker compose run --rm builder
 
 ## 出力物
 - `dist/MeetingMojiokoshi` : 実行可能バイナリ
-- `release/*.tar.gz` : 配布用アーカイブ（.desktop ファイル同梱）
+- `release/*.tar.gz` : 配布用アーカイブ（LICENSE、THIRD_PARTY_NOTICES.md、.desktop ファイル同梱）
 
 ## 注意事項
 - バイナリは Debian 13 (trixie) ベースの Docker イメージでビルドされます。古い glibc 環境では動作しない場合があります。
 - 実行権限: パッケージング時に 0o755 が設定されますが、展開後に `chmod +x` が必要になる場合があります。
 - **System Tray（タスクトレイ）対応**: pystray + Pillow を依存に追加し、PyInstaller でバンドルしています。トレイアイコン（青い円に白い「M」）が表示され、ウィンドウを閉じてもバックグラウンド動作 + 右クリックメニューで録音制御が可能になります。Linux では一部環境で `libayatana-appindicator` 系パッケージが必要な場合があります（実行時に自動フォールバック）。
-- GitHub Actions では自動的に Linux ビルド（Docker）が行われます。
+- GitHub Actions では自動的に Linux ビルド（Docker）が行われますが、第三者ライセンス確認が完了するまでバイナリアーティファクトはアップロードしません。
 
 詳細はプロジェクトルートの README.md も参照してください。

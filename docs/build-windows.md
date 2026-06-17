@@ -13,8 +13,8 @@
 
 1. リポジトリをクローン
    ```powershell
-   git clone https://github.com/OWNER/REPOSITORY.git
-   cd REPOSITORY
+   git clone https://github.com/yoshi-bbb/meeting_transcript.git
+   cd meeting_transcript
    ```
 
 2. 仮想環境を作成・有効化
@@ -50,15 +50,15 @@
    python scripts/package_release.py
    ```
 
-   `release/` ディレクトリに `MeetingMojiokoshi-0.2.0-windows-x86_64.zip` と SHA256 ファイルが生成されます。
+   `release/` ディレクトリに `MeetingMojiokoshi-0.2.0-windows-x86_64.zip` と SHA256 ファイルが生成されます。パッケージには README.md、LICENSE、THIRD_PARTY_NOTICES.md が含まれます。
 
 ## 出力物
 - `dist/MeetingMojiokoshi.exe` : 実行ファイル
-- `release/*.zip` : 配布用アーカイブ（README.md 同梱）
+- `release/*.zip` : 配布用アーカイブ（README.md、LICENSE、THIRD_PARTY_NOTICES.md 同梱）
 
 ## 注意事項
 - ビルドにはある程度の時間とディスク容量が必要です（依存ライブラリを含む）。
-- GitHub Actions では Windows runner 上で自動ビルドされます。手動ビルドは主にローカルテスト用です。
+- GitHub Actions では Windows runner 上で自動ビルドされますが、第三者ライセンス確認が完了するまでバイナリアーティファクトはアップロードしません。手動ビルドは主にローカルテスト用です。
 - **System Tray（タスクトレイ）対応**: pystray + Pillow を依存に追加し、PyInstaller でバンドルしています。ウィンドウを閉じるとトレイに最小化され、右クリックメニューから録音開始/停止/終了が可能です。
 - 配布時はコード署名を検討してください（現在の CI では行っていません）。
 

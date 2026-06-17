@@ -18,16 +18,12 @@ jobs:
       matrix:
         include:
           - runner: ubuntu-latest
-            artifact: Linux-x86_64
             smoke: --full
           - runner: windows-latest
-            artifact: Windows-x86_64
             smoke: --full
           - runner: macos-15-intel
-            artifact: macOS-x86_64
             smoke: ""
           - runner: macos-15
-            artifact: macOS-arm64
             smoke: ""
     runs-on: ${{ matrix.runner }}
     permissions:
@@ -75,15 +71,9 @@ jobs:
             meeting-mojiokoshi \
             sh -c "python scripts/build_desktop.py && python scripts/smoke_desktop.py --full"
 
-      - name: Smoke test desktop artifact
+      - name: Smoke test desktop build
         if: runner.os != 'Linux'
         run: python scripts/smoke_desktop.py ${{ matrix.smoke }}
 
       - name: Package release archive
         run: python scripts/package_release.py
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: MeetingMojiokoshi-${{ matrix.artifact }}
-          path: release/**

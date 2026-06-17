@@ -8,7 +8,7 @@ version = "0.2.0"
 description = "Desktop meeting recorder and CPU Whisper transcription app"
 readme = "README.md"
 license = "LicenseRef-MeetingMojiokoshi-Source-Available-1.0"
-license-files = ["LICENSE"]
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
 requires-python = ">=3.10,<3.13"
 dependencies = [
     "faster-whisper>=1.1,<2",

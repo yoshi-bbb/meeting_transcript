@@ -14,8 +14,8 @@
 
 1. リポジトリをクローン
    ```bash
-   git clone https://github.com/OWNER/REPOSITORY.git
-   cd REPOSITORY
+   git clone https://github.com/yoshi-bbb/meeting_transcript.git
+   cd meeting_transcript
    ```
 
 2. 仮想環境を作成・有効化
@@ -51,15 +51,16 @@
    python scripts/package_release.py
    ```
 
-   `release/` に `MeetingMojiokoshi-0.2.0-macos-*.zip` と SHA256 ファイルが生成されます（アーキテクチャにより x86_64 または arm64）。
+   `release/` に `MeetingMojiokoshi-0.2.0-macos-*.zip` と SHA256 ファイルが生成されます（アーキテクチャにより x86_64 または arm64）。パッケージには README.md、LICENSE、THIRD_PARTY_NOTICES.md が含まれます。
 
 ## 出力物
 - `dist/MeetingMojiokoshi.app` : アプリバンドル
-- `release/*.zip` : 配布用アーカイブ（README.md 同梱）
+- `release/*.zip` : 配布用アーカイブ（README.md、LICENSE、THIRD_PARTY_NOTICES.md 同梱）
 
 ## 注意事項
 - 初回ビルド時はセキュリティ警告が出る場合があります（右クリック → 開く）。
 - Apple Silicon（arm64）と Intel（x86_64）は別々にビルドする必要があります（GitHub Actions で並列ビルド）。
+- GitHub Actions では第三者ライセンス確認が完了するまでバイナリアーティファクトはアップロードしません。
 - **System Tray（タスクトレイ / メニューバー）対応**: pystray + Pillow を依存に追加し、PyInstaller でバンドルしています。ウィンドウを閉じるとメニューバートレイに最小化され、クリックメニューから録音制御が可能です。
 - 配布時は Apple Developer ID での署名・公証（notarization）を推奨します（現在の CI では未実施）。
 

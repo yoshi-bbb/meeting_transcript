@@ -13,6 +13,9 @@ from pathlib import Path
 from meeting_mojiokoshi import __version__
 
 
+COMMON_RELEASE_FILES = ("README.md", "LICENSE", "THIRD_PARTY_NOTICES.md")
+
+
 def normalized_architecture() -> str:
     machine = platform.machine().lower()
     return {
@@ -31,6 +34,16 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def add_common_files_to_zip(zip_file: zipfile.ZipFile, project_root: Path) -> None:
+    for filename in COMMON_RELEASE_FILES:
+        zip_file.write(project_root / filename, filename)
+
+
+def add_common_files_to_tar(tar_file: tarfile.TarFile, project_root: Path) -> None:
+    for filename in COMMON_RELEASE_FILES:
+        tar_file.add(project_root / filename, arcname=filename)
+
+
 def package_windows(project_root: Path, release_dir: Path, base_name: str) -> Path:
     executable = project_root / "dist" / "MeetingMojiokoshi.exe"
     if not executable.exists():
@@ -38,8 +51,7 @@ def package_windows(project_root: Path, release_dir: Path, base_name: str) -> Pa
     archive = release_dir / f"{base_name}.zip"
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as zip_file:
         zip_file.write(executable, executable.name)
-        zip_file.write(project_root / "README.md", "README.md")
-        zip_file.write(project_root / "LICENSE", "LICENSE")
+        add_common_files_to_zip(zip_file, project_root)
     return archive
 
 
@@ -64,8 +76,7 @@ def package_macos(project_root: Path, release_dir: Path, base_name: str) -> Path
     else:
         shutil.make_archive(str(archive.with_suffix("")), "zip", app_bundle.parent, app_bundle.name)
     with zipfile.ZipFile(archive, "a", compression=zipfile.ZIP_DEFLATED) as zip_file:
-        zip_file.write(project_root / "README.md", "README.md")
-        zip_file.write(project_root / "LICENSE", "LICENSE")
+        add_common_files_to_zip(zip_file, project_root)
     return archive
 
 
@@ -101,8 +112,7 @@ StartupNotify=true
         with executable.open("rb") as f:
             tar_file.addfile(tarinfo, f)
 
-        tar_file.add(project_root / "README.md", arcname="README.md")
-        tar_file.add(project_root / "LICENSE", arcname="LICENSE")
+        add_common_files_to_tar(tar_file, project_root)
 
         # Add the .desktop file
         desktop_tarinfo = tarfile.TarInfo(name="MeetingMojiokoshi.desktop")

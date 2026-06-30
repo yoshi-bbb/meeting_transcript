@@ -2,7 +2,7 @@
 # Update digest after verifying the new image on Docker Hub:
 #   docker pull python:3.12-slim-trixie
 #   docker inspect python:3.12-slim-trixie --format '{{index .RepoDigests 0}}'
-FROM python:3.12-slim-trixie@sha256:d764629ce0ddd8c71fd371e9901efb324a95789d2315a47db7e4d27e78f1b0e9
+FROM python:3.12-slim-trixie@sha256:423ed6ab25b1921a477529254bfeeabf5855151dc2c3141699a1bfc852199fbf
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \

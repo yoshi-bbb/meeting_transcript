@@ -171,7 +171,7 @@ rich==15.0.0
     #   bandit
     #   pip-audit
     #   typer
-setuptools==82.0.1
+setuptools==83.0.0
     # via
     #   ctranslate2
     #   pyinstaller

@@ -109,7 +109,7 @@ pillow==12.2.0
     # via
     #   meeting-mojiokoshi (pyproject.toml)
     #   pystray
-pip==26.1.2
+pip==26.2
     # via pip-api
 pip-api==0.0.34
     # via pip-audit

@@ -6,7 +6,7 @@ altgraph==0.17.5
     #   pyinstaller
 annotated-doc==0.0.4
     # via typer
-anyio==4.14.0
+anyio==4.14.2
     # via httpx
 av==17.1.0
     # via faster-whisper
